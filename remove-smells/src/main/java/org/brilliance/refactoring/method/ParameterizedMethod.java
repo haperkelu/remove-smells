@@ -22,18 +22,27 @@ public class ParameterizedMethod {
 
 	}
 
-	private double salary;
+	static class SalaryPackage {
+		private double salary;
 
-	void tenPercentRaise() {
-		salary *= 1.1;
-	}
+		void tenPercentRaise() {
+			salary *= 1.1;
+		}
 
-	void fivePercentRaise() {
-		salary *= 1.05;
-	}
+		void fivePercentRaise() {
+			salary *= 1.05;
+		}
 
-	void salaryRaised(double percent) {
-		salary *= percent;
+		void salaryRaised(double percent) {
+			salary *= percent;
+		}
+
+		/**
+		 * @return the salary
+		 */
+		public double getSalary() {
+			return salary;
+		}
 	}
 
 	protected Dollars baseCharge_pre() {
@@ -64,7 +73,9 @@ public class ParameterizedMethod {
 	private static final double LEVEL2_RATE = 0.05;
 	private static final double LEVEL3_RATE = 0.07;
 
-	protected double extractNumberBetweenRange(double value, double start, double end) {
+	protected double extractNumberBetweenRange(
+			double value, 
+			double start, double end) {
 		if (value > start)
 			return Math.min(value, end) - start;
 		return ZERO_USAGE;
@@ -75,10 +86,8 @@ public class ParameterizedMethod {
 	}
 
 	class Dollars {
-
 		public Dollars(double result) {
 		}
-
 	}
 
 }
