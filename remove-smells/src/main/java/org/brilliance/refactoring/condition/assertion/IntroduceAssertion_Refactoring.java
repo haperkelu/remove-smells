@@ -18,7 +18,7 @@ public class IntroduceAssertion_Refactoring {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
+		//do not forget to add vm arguments "-enableassertions" when in alpha/beta test
 	}
 
 }
